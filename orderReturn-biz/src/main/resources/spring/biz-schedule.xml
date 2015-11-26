@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 所有的执行计划  -->
+	<bean id="allScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="ebsOrderReturnTrigger"/>
+				<ref bean="ebsOrderReturnPriorityTrigger"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 客退申请单 EBS  start -->
+	<bean id="ebsOrderReturnJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="jobInfEbsOrderReturnFService"/>
+		</property>
+		<property name="targetMethod">
+			<value>saveTransmit</value>
+		</property>
+	</bean>
+	<bean id="ebsOrderReturnTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="ebsOrderReturnJob" />
+		<property name="cronExpression" value="0 0/1 * * * ?"/>
+		<property name="group" value="[ebs]" />
+		<property name="description" value="ebs客退申请单接口" />
+	</bean>
+	<!-- 客退申请单 EBS  end -->
+	
+	<!-- 客退申请单 优先级EBS  start -->
+	<bean id="ebsOrderReturnPriorityJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="jobInfEbsOrderReturnFService"/>
+		</property>
+		<property name="targetMethod">
+			<value>saveTransmitByPriority</value>
+		</property>
+	</bean>
+	<bean id="ebsOrderReturnPriorityTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="ebsOrderReturnPriorityJob" />
+		<property name="cronExpression" value="0 0/1 * * * ?"/>
+		<property name="group" value="[ebs]" />
+		<property name="description" value="ebs客退申请单优先级接口" />
+	</bean>
+	<!-- 客退申请单优先级 EBS  end -->
+	
+	
+</beans>

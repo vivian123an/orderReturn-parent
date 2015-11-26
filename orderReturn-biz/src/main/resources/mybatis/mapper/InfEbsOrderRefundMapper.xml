@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.InfEbsOrderRefundMapper" >
+  <resultMap id="BaseResultMap" type="InfEbsOrderRefund" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="order_sn" property="orderSn" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="refund_no" property="refundNo" jdbcType="VARCHAR" />
+    <result column="business_type" property="businessType" jdbcType="VARCHAR" />
+    <result column="supplier_id" property="supplierId" jdbcType="INTEGER" />
+    <result column="pay_type" property="payType" jdbcType="VARCHAR" />
+    <result column="pay_method" property="payMethod" jdbcType="VARCHAR" />
+    <result column="return_amount" property="returnAmount" jdbcType="FLOAT" />
+     <result column="pay_amount" property="payAmount" jdbcType="FLOAT" />
+    <result column="ecv_money" property="ecvMoney" jdbcType="FLOAT" />
+    <result column="refund_date" property="refundDate" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="is_send" property="isSend" jdbcType="INTEGER" />
+    <result column="send_times" property="sendTimes" jdbcType="INTEGER" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="error_remark" property="errorRemark" jdbcType="VARCHAR" />
+   
+    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    o_r.id id ,o_r.order_id ,o_r.order_sn ,o_r.user_id,o_r.refund_no,o_r.business_type,o_r.supplier_id,o_r.pay_type,o_r.pay_method,o_r.return_amount,o_r.pay_amount,
+    o_r.ecv_money,o_r.refund_date,o_r.status,o_r.is_send,o_r.send_times,o_r.is_delete,o_r.create_time,o_r.create_by,o_r.update_time,o_r.update_by,o_r.error_remark
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from inf_ebs_order_refund o_r
+    where o_r.id = #{id,jdbcType=INTEGER}
+  </select>
+  
+ 
+ 	
+ 	<update id="updateOrderRefundStatus"  parameterType="map">
+ 		update inf_ebs_order_refund o_r set o_r.status=#{status} ,o_r.refund_date=#{refund_date},o_r.update_time=now() where o_r.id=#{id,jdbcType=INTEGER}
+ 	</update>
+ 	
+ 	
+ 	<update id="updateOrderAfterSaleById" parameterType="map">
+ 		update ve_deal_order d_o set d_o.after_sale = #{order_status} where d_o.id=#{order_id} 
+ 	</update>
+ 	
+ 	  <select id="getUnSendOrderRefundsBySendTimes" resultMap="BaseResultMap" parameterType="map">
+	    select 
+	    <include refid="Base_Column_List" />
+	    from inf_ebs_order_refund o_r
+	    <![CDATA[ where o_r.is_send = 0 and o_r.send_times < #{sendTimes,jdbcType=INTEGER} limit 0,#{maxCount,jdbcType=INTEGER} ]]>
+  	</select>
+  	
+  	
+  	
+  	<update id="updateSendStatus" parameterType="List">
+  		 update inf_ebs_order_refund or set or.is_send = 1, or.send_time=now(), or.update_time=now() where or.id in
+  		<foreach item="item" index="index" collection="refundIds" open="(" separator="," close=")">  
+		  #{item}
+		</foreach>
+  	</update>
+  	
+  	
+  	<update id="updateSendTimesAdd" parameterType="map">
+  		update inf_ebs_order_refund set is_send=is_send+1,error_remark=#{errMsg},update_time=now() where id=${refundId}
+  	</update>
+
+</mapper>

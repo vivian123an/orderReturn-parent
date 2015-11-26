@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.OrderReturnHeaderMapper" >
+  <resultMap id="BaseResultMap" type="OrderReturnHeader" >
+	<id column="h_id" property="id" jdbcType="INTEGER" />
+	<result column="h_return_no" property="returnNo" jdbcType="VARCHAR" />
+    <result column="h_order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="h_order_sn" property="orderSn" jdbcType="VARCHAR" />
+    <result column="h_user_id" property="userId" jdbcType="INTEGER" />
+    <result column="h_return_descript" property="returnDescript" jdbcType="VARCHAR" />
+    <result column="h_pay_type" property="payType" jdbcType="VARCHAR" />
+    <result column="h_pay_method" property="payMethod" jdbcType="VARCHAR" />
+    <result column="h_return_money" property="returnMoney" jdbcType="DOUBLE" />
+    <result column="h_express_code" property="expressCode" jdbcType="VARCHAR" />
+    <result column="h_express_name" property="expressName" jdbcType="VARCHAR" />
+    <result column="h_transport_no" property="transportNo" jdbcType="VARCHAR" />
+    <result column="h_contact_user" property="contactUser" jdbcType="VARCHAR" />
+    <result column="h_contact_phone_no" property="contactPhoneNo" jdbcType="VARCHAR" />
+    <result column="h_img_url1" property="imgUrl1" jdbcType="VARCHAR" />
+    <result column="h_img_url2" property="imgUrl2" jdbcType="VARCHAR" />
+    <result column="h_img_url3" property="imgUrl3" jdbcType="VARCHAR" />
+    <result column="h_receipt_reason" property="receiptReason" jdbcType="VARCHAR" />
+    <result column="h_receipt_descript" property="receiptDescript" jdbcType="VARCHAR" />
+    <result column="h_process_result" property="processResult" jdbcType="VARCHAR" />
+    <result column="h_result_descript" property="resultDescript" jdbcType="VARCHAR" />
+    <result column="h_memo" property="memo" jdbcType="VARCHAR" />
+    <result column="h_status" property="status" jdbcType="VARCHAR" />
+    <result column="h_status_bms" property="statusBms" jdbcType="VARCHAR" />
+    <result column="h_status_msg" property="statusMsg" jdbcType="VARCHAR" />
+    <result column="h_error_time" property="errorTime" jdbcType="TIMESTAMP" />
+    <result column="h_is_send" property="isSend" jdbcType="TINYINT" />
+    <result column="h_send_times" property="sendTimes" jdbcType="INTEGER" />
+    <result column="h_send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="h_is_delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="h_create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="h_create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="h_update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="h_update_by" property="updateBy" jdbcType="INTEGER" />	
+  </resultMap>
+  <sql id="Base_Column_List" >
+    r_h.id h_id, r_h.return_no h_return_no, r_h.order_id h_order_id,  r_h.order_sn h_order_sn, r_h.user_id h_user_id, 
+    r_h.return_descript h_return_descript, r_h.pay_type h_pay_type, r_h.pay_method h_pay_method, r_h.return_money h_return_money,
+    r_h.express_code h_express_code, r_h.express_name h_express_name, r_h.transport_no h_transport_no, 
+    r_h.contact_user h_contact_user, r_h.contact_phone_no h_contact_phone_no, r_h.img_url1 h_img_url1, 
+    r_h.img_url2 h_img_url2, r_h.img_url3 h_img_url3, r_h.receipt_reason h_receipt_reason, r_h.receipt_descript h_receipt_descript, 
+    r_h.process_result h_process_result, r_h.result_descript h_result_descript, r_h.memo h_memo, 
+    r_h.status h_status, r_h.status_bms h_status_bms, r_h.status_msg h_status_msg,
+    r_h.error_time h_error_time, r_h.is_send h_is_send, r_h.send_times h_send_times, r_h.send_time h_send_time, 
+    r_h.is_delete h_is_delete, r_h.create_time h_create_time, r_h.create_by h_create_by, r_h.update_time h_update_time, r_h.update_by h_update_by
+  </sql>
+  
+  
+   <sql id="Base_Column_List_Ve_USER" >
+    r_h.id h_id, r_h.return_no h_return_no, r_h.order_id h_order_id,  r_h.order_sn h_order_sn, r_h.user_id h_user_id, 
+    r_h.return_descript h_return_descript, r_h.pay_type h_pay_type, r_h.pay_method h_pay_method, r_h.return_money h_return_money,
+    r_h.express_code h_express_code, r_h.express_name h_express_name, r_h.transport_no h_transport_no, 
+    r_h.contact_user h_contact_user, r_h.contact_phone_no h_contact_phone_no, r_h.img_url1 h_img_url1, 
+    r_h.img_url2 h_img_url2, r_h.img_url3 h_img_url3, r_h.receipt_reason h_receipt_reason, r_h.receipt_descript h_receipt_descript, 
+    r_h.process_result h_process_result, r_h.result_descript h_result_descript, r_h.memo h_memo, 
+    r_h.status h_status, r_h.status_bms h_status_bms, r_h.status_msg h_status_msg,
+    r_h.error_time h_error_time, r_h.is_send h_is_send, r_h.send_times h_send_times, r_h.send_time h_send_time, 
+    r_h.is_delete h_is_delete, r_h.create_time h_create_time, r_h.create_by h_create_by, r_h.update_time h_update_time, r_h.update_by h_update_by
+  </sql>
+  
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List_Ve_USER" />
+    from order_return_header r_h left join ve_user u on r_h.user_id=u.id
+    where r_h.id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="getOrderReturnHeaderByReturnNo" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_return_header r_h
+    where r_h.return_no = #{returnNo,jdbcType=INTEGER} limit 0,1
+  </select>
+  
+  <select id="getOrderReturnListPage" parameterType="map" resultMap="BaseResultMap">
+  	  <include refid="getOrderReturnList"/>
+  </select>
+  <sql id="getOrderReturnList">
+  	  select distinct 
+  	  	<include refid="Base_Column_List"/>
+	  from order_return_header r_h
+  	  <where>
+	  	<include refid="orderReturnQuery_whereConditions"/>
+  	  </where>
+  	  order by r_h.id desc
+  </sql>
+  
+  <sql id="orderReturnQuery_whereConditions">
+	 <if test="query.id > 0">
+	  	and r_h.id = #{query.id}
+	 </if>
+	 <if test="query.orderId != null">
+	  	and r_h.order_id = #{query.orderId}
+	 </if>
+	 <if test="query.orderSn != null and  query.orderSn!='' ">
+	  	<![CDATA[ and r_h.order_sn = #{query.orderSn} ]]>
+	 </if>
+	 <if test="query.userId != null">
+	  	<![CDATA[ and r_h.user_id = #{query.userId} ]]>
+	 </if>
+  </sql>
+  
+  
+  <insert id="save" parameterType="OrderReturnHeader" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into order_return_header
+    <trim prefix="(" suffix=")" suffixOverrides="," >  
+      <if test="returnNo != null" >
+        return_no,
+      </if>    
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="orderSn != null" >
+        order_sn,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="returnDescript != null" >
+        return_descript,
+      </if>
+      <if test="payType != null" >
+        pay_type,
+      </if>
+      <if test="payMethod != null" >
+        pay_method,
+      </if>
+      <if test="returnMoney != null" >
+        return_money,
+      </if>
+      <if test="expressCode != null" >
+        express_code,
+      </if>
+      <if test="expressName != null" >
+        express_name,
+      </if>
+      <if test="transportNo != null" >
+        transport_no,
+      </if>
+      <if test="contactUser != null" >
+        contact_user,
+      </if>
+      <if test="contactPhoneNo != null" >
+        contact_phone_no,
+      </if>
+      <if test="imgUrl1 != null" >
+        img_url1,
+      </if>
+      <if test="imgUrl2 != null" >
+        img_url2,
+      </if>
+      <if test="imgUrl3 != null" >
+        img_url3,
+      </if>
+      <if test="receiptReason != null" >
+        receipt_reason,
+      </if>
+      <if test="receiptDescript != null" >
+        receipt_descript,
+      </if>
+      <if test="processResult != null" >
+        process_result,
+      </if>
+      <if test="resultDescript != null" >
+        result_descript,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="statusBms != null" >
+        status_bms,
+      </if>
+      <if test="statusMsg != null" >
+        status_msg,
+      </if>
+      <if test="errorTime != null" >
+        error_time,
+      </if>
+      <if test="isSend != null" >
+        is_send,
+      </if>
+      <if test="sendTimes != null" >
+        send_times,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="returnNo != null" >
+        #{returnNo,jdbcType=VARCHAR},
+      </if>    
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null" >
+        #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="returnDescript != null" >
+        #{returnDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null" >
+        #{payType,jdbcType=VARCHAR},
+      </if>
+      <if test="payMethod != null" >
+        #{payMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="returnMoney != null" >
+        #{returnMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="expressCode != null" >
+        #{expressCode,jdbcType=VARCHAR},
+      </if>
+      <if test="expressName != null" >
+        #{expressName,jdbcType=VARCHAR},
+      </if>
+      <if test="transportNo != null" >
+        #{transportNo,jdbcType=VARCHAR},
+      </if>
+      <if test="contactUser != null" >
+        #{contactUser,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhoneNo != null" >
+        #{contactPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl1 != null" >
+        #{imgUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl2 != null" >
+        #{imgUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl3 != null" >
+        #{imgUrl3,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptReason != null" >
+        #{receiptReason,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptDescript != null" >
+        #{receiptDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="processResult != null" >
+        #{processResult,jdbcType=VARCHAR},
+      </if>
+      <if test="resultDescript != null" >
+        #{resultDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="statusBms != null" >
+        #{statusBms,jdbcType=VARCHAR},
+      </if>
+      <if test="statusMsg != null" >
+        #{statusMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="errorTime != null" >
+        #{errorTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSend != null" >
+        #{isSend,jdbcType=TINYINT},
+      </if>
+      <if test="sendTimes != null" >
+        #{sendTimes,jdbcType=INTEGER},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=INTEGER},
+      </if>
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="OrderReturnHeader" >
+    update order_return_header
+    <set >
+      <if test="returnNo != null" >
+        return_no = #{returnNo,jdbcType=VARCHAR},
+      </if>    
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null" >
+        order_sn = #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="returnDescript != null" >
+        return_descript = #{returnDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null" >
+        pay_type = #{payType,jdbcType=VARCHAR},
+      </if>
+      <if test="payMethod != null" >
+        pay_method = #{payMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="returnMoney != null" >
+        return_money = #{returnMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="expressCode != null" >
+        express_code = #{expressCode,jdbcType=VARCHAR},
+      </if>
+      <if test="expressName != null" >
+        express_name = #{expressName,jdbcType=VARCHAR},
+      </if>
+      <if test="transportNo != null" >
+        transport_no = #{transportNo,jdbcType=VARCHAR},
+      </if>
+      <if test="contactUser != null" >
+        contact_user = #{contactUser,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhoneNo != null" >
+        contact_phone_no = #{contactPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl1 != null" >
+        img_url1 = #{imgUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl2 != null" >
+        img_url2 = #{imgUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl3 != null" >
+        img_url3 = #{imgUrl3,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptReason != null" >
+        receipt_reason = #{receiptReason,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptDescript != null" >
+        receipt_descript = #{receiptDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="processResult != null" >
+        process_result = #{processResult,jdbcType=VARCHAR},
+      </if>
+      <if test="resultDescript != null" >
+        result_descript = #{resultDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="statusBms != null" >
+        status_bms = #{statusBms,jdbcType=VARCHAR},
+      </if>
+      <if test="statusMsg != null" >
+        status_msg = #{statusMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="errorTime != null" >
+        error_time = #{errorTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSend != null" >
+        is_send = #{isSend,jdbcType=TINYINT},
+      </if>
+      <if test="sendTimes != null" >
+        send_times = #{sendTimes,jdbcType=INTEGER},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateSendStatus" parameterType="List" >
+    update order_return_header h set h.is_send = 1, h.send_time=now(), h.update_time=now() where h.id in
+  		<foreach item="item" index="index" collection="headerIds" open="(" separator="," close=")">  
+		  #{item}
+		</foreach>
+  </update>
+  
+  <update id="updateSendTimesAdd" parameterType="List" >
+    update order_return_header h set h.send_times = h.send_times+1, h.update_time=now() where h.id in
+  		<foreach item="item" index="index" collection="headerIds" open="(" separator="," close=")">  
+		  #{item}
+		</foreach>
+  </update>
+  
+  <select id="getUnSendHeadersBySendTimes" resultMap="headerAndDetailMap" parameterType="map">
+    select 
+    <include refid="Base_Column_List" />,
+    <include refid="me.quxiu.orderReturn.mapper.OrderReturnDetailMapper.Base_Column_List"/>
+    from order_return_header r_h
+    left join order_return_detail r_d on(r_h.id = r_d.order_return_header_id)
+    <![CDATA[ where r_h.is_send = 0 and r_h.send_times < #{sendTimes,jdbcType=INTEGER} limit 0,#{maxCount,jdbcType=INTEGER} ]]>
+  </select>
+  
+	<resultMap id="headerAndDetailMap" type="OrderReturnHeader">
+		<id column="h_id" property="id" jdbcType="INTEGER" />
+		<id column="h_return_no" property="returnNo" jdbcType="VARCHAR" />
+	    <result column="h_order_id" property="orderId" jdbcType="INTEGER" />
+	    <result column="h_order_sn" property="orderSn" jdbcType="VARCHAR" />
+	    <result column="h_user_id" property="userId" jdbcType="INTEGER" />
+	    <result column="h_return_descript" property="returnDescript" jdbcType="VARCHAR" />
+	    <result column="h_pay_type" property="payType" jdbcType="VARCHAR" />
+	    <result column="h_pay_method" property="payMethod" jdbcType="VARCHAR" />
+	    <result column="h_return_money" property="returnMoney" jdbcType="DOUBLE" />
+    	<result column="h_express_code" property="expressCode" jdbcType="VARCHAR" />
+    	<result column="h_express_name" property="expressName" jdbcType="VARCHAR" />	    
+	    <result column="h_transport_no" property="transportNo" jdbcType="VARCHAR" />
+	    <result column="h_contact_user" property="contactUser" jdbcType="VARCHAR" />
+	    <result column="h_contact_phone_no" property="contactPhoneNo" jdbcType="VARCHAR" />
+	    <result column="h_img_url1" property="imgUrl1" jdbcType="VARCHAR" />
+	    <result column="h_img_url2" property="imgUrl2" jdbcType="VARCHAR" />
+	    <result column="h_img_url3" property="imgUrl3" jdbcType="VARCHAR" />
+	    <result column="h_receipt_reason" property="receiptReason" jdbcType="VARCHAR" />
+	    <result column="h_receipt_descript" property="receiptDescript" jdbcType="VARCHAR" />
+	    <result column="h_process_result" property="processResult" jdbcType="VARCHAR" />
+	    <result column="h_result_descript" property="resultDescript" jdbcType="VARCHAR" />
+	    <result column="h_memo" property="memo" jdbcType="VARCHAR" />
+	    <result column="h_status" property="status" jdbcType="VARCHAR" />
+	    <result column="h_error_time" property="errorTime" jdbcType="TIMESTAMP" />
+	    <result column="h_is_send" property="isSend" jdbcType="TINYINT" />
+	    <result column="h_send_times" property="sendTimes" jdbcType="INTEGER" />
+	    <result column="h_send_time" property="sendTime" jdbcType="TIMESTAMP" />
+	    <result column="h_is_delete" property="isDelete" jdbcType="TINYINT" />
+	    <result column="h_create_time" property="createTime" jdbcType="TIMESTAMP" />
+	    <result column="h_create_by" property="createBy" jdbcType="INTEGER" />
+	    <result column="h_update_time" property="updateTime" jdbcType="TIMESTAMP" />
+	    <result column="h_update_by" property="updateBy" jdbcType="INTEGER" />
+	    <collection property="details" javaType="ArrayList" ofType="OrderReturnDetail" 
+	    			resultMap="me.quxiu.orderReturn.mapper.OrderReturnDetailMapper.BaseResultMap"/>
+	</resultMap>  
+  
+  
+  <select id="getOrderCountByOrderId" parameterType="_int" resultType="int">
+  	  select count(1) from ve_deal_order o where o.id = #{orderId,jdbcType=INTEGER}
+  </select>
+  
+  <select id="getOrderCountByOrderSn" parameterType="String" resultType="int">
+  	  select count(1) from ve_deal_order o where o.order_sn = #{orderSn,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="getUserCountByUserId" parameterType="_int" resultType="int">
+  	  select count(1) from ve_user u where u.id = #{userId,jdbcType=VARCHAR}
+  </select>
+  
+   <update id="updateRefundStatus" parameterType="map" >
+  		update order_return_header set status_bms=#{statusBms} ,status=#{status},status_msg=#{statusMsg},update_time=now() where id=#{id}
+  </update>
+  
+    <update id="updateRefundStatusByReturnNo" parameterType="map" >
+  		update order_return_header set status_bms=#{statusBms} ,status=#{status},status_msg=#{statusMsg},update_time=now(),update_by=#{processUser} where return_no=#{returnNo}
+  </update>
+  
+  
+   
+  <resultMap type="OrderReturnHeaderDto" id="headerDtoMap">
+  		<id column="id" property="id" jdbcType="INTEGER" />
+  		<result column="return_no" property="returnNo" jdbcType="VARCHAR" />
+	    <result column="order_sn" property="orderSn" jdbcType="VARCHAR" />
+	    <result column="user_account" property="userAccount" jdbcType="INTEGER" />
+	    <result column="transport_no" property="transportNo" jdbcType="VARCHAR" />
+	    <result column="contact_user" property="contactUser" jdbcType="VARCHAR" />
+	    <result column="contact_phone_no" property="contactPhoneNo" jdbcType="VARCHAR" />
+	    <result column="status_bms" property="statusBms" jdbcType="VARCHAR" />
+	    <result column="create_time" property="applyTime" jdbcType="TIMESTAMP" />
+	  	<result column="refund_price" property="refundPrice" jdbcType="FLOAT"/>
+	  	
+  </resultMap>
+  
+  
+  
+  <select id="queryAllRows" parameterType="map" resultType="java.lang.Integer">
+  
+  	select count(1) from (	SELECT h.id FROM order_return_header h  
+ 	LEFT JOIN ve_user u ON  h.user_id=u.id 
+	 <where>
+	  	<include refid="orderReturnBmsQuery_whereConditions"/>
+  	  </where>
+  	  ) a
+  
+  </select>
+  
+  <select id="getOrderReturnListPageForBms" parameterType="map" resultMap="headerDtoMap">
+  
+  	SELECT h.id ,u.user_name user_account,h.contact_phone_no ,h.id,h.order_sn,h.return_no,h.status_bms,h.transport_no,h.contact_user ,h.create_time,
+  		h.return_money refund_price 
+  	FROM order_return_header h 
+ 	LEFT JOIN ve_user u ON  h.user_id=u.id 
+	 <where>
+	  	<include refid="orderReturnBmsQuery_whereConditions"/>
+  	  </where>
+  		order by h.update_time desc
+  		limit #{startIndex},#{pageSize}
+  </select>
+  
+  
+  
+   <sql id="orderReturnBmsQuery_whereConditions">
+   
+	 <if test="query.returnNo !=null and query.returnNo !='' ">
+	  	and h.return_no = #{query.returnNo}
+	 </if>
+	 <if test="query.orderSn != null and query.orderSn !='' ">
+	  	<![CDATA[ and h.order_sn = #{query.orderSn} ]]>
+	 </if>
+	  <if test="query.contactPhoneNo != null and query.contactPhoneNo !='' ">
+	  	<![CDATA[and h.contact_phone_no = #{query.contactPhoneNo}]]>
+	 </if>
+	 <if test="query.transportNo!= null and query.transportNo!= '' ">
+	  	<![CDATA[ and h.transport_no = #{query.transportNo} ]]>
+	 </if>
+	  <if test="query.statusBms!= null and query.statusBms!='' ">
+	  	<![CDATA[ and h.status_bms = #{query.statusBms} ]]>
+	 </if>
+	 <if test="query.createTimeStart!= null and query.createTimeStart !='' ">
+	  	<![CDATA[ and h.create_time >= #{query.createTimeStart} ]]>
+	 </if>
+	  <if test="query.createTimeEnd!= null and query.createTimeEnd!='' ">
+	  	<![CDATA[ and h.create_time <= #{query.createTimeEnd} ]]>
+	 </if>
+  </sql>
+  
+</mapper>

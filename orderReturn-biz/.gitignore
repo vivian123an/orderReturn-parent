@@ -1,0 +1,7 @@
+*.class
+.settings/*
+target/*
+logs/*
+*.jar
+/target/
+catalina.base_IS_UNDEFINED/*

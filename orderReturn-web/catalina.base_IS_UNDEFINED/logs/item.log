@@ -1,0 +1,348 @@
+2015-11-10 11:16:14.648 DEBUG  o.a.i.l.LogFactory [LogFactory.java:115] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2015-11-10 11:16:14.717 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VFS
+2015-11-10 11:16:14.718 DEBUG  o.a.i.i.ResolverUtil [JBoss6VFS.java:137] JBoss 6 VFS API is not available in this environment.
+2015-11-10 11:16:14.719 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VirtualFile
+2015-11-10 11:16:14.720 DEBUG  o.a.i.i.ResolverUtil [VFS.java:68] VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2015-11-10 11:16:14.720 DEBUG  o.a.i.i.ResolverUtil [VFS.java:80] Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2015-11-10 11:16:14.722 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:16:14.722 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:16:14.723 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.723 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.724 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:16:14.725 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfConfiguration.class
+2015-11-10 11:16:14.725 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfEbsOrderRefund.class
+2015-11-10 11:16:14.726 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfExceptionLog.class
+2015-11-10 11:16:14.726 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnDetail.class
+2015-11-10 11:16:14.726 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnHeader.class
+2015-11-10 11:16:14.727 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessLog.class
+2015-11-10 11:16:14.727 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessRemark.class
+2015-11-10 11:16:14.728 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnType.class
+2015-11-10 11:16:14.728 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/VeExpress.class
+2015-11-10 11:16:14.728 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfConfiguration matches criteria [is assignable to Object]
+2015-11-10 11:16:14.729 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfEbsOrderRefund matches criteria [is assignable to Object]
+2015-11-10 11:16:14.730 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfExceptionLog matches criteria [is assignable to Object]
+2015-11-10 11:16:14.730 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnDetail matches criteria [is assignable to Object]
+2015-11-10 11:16:14.731 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnHeader matches criteria [is assignable to Object]
+2015-11-10 11:16:14.732 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessLog matches criteria [is assignable to Object]
+2015-11-10 11:16:14.732 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessRemark matches criteria [is assignable to Object]
+2015-11-10 11:16:14.733 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnType matches criteria [is assignable to Object]
+2015-11-10 11:16:14.733 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.VeExpress matches criteria [is assignable to Object]
+2015-11-10 11:16:14.734 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.model' for aliases
+2015-11-10 11:16:14.735 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:16:14.735 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:16:14.735 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.736 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.736 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:16:14.737 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/query/OrderReturnHeaderQuery.class
+2015-11-10 11:16:14.738 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.query.OrderReturnHeaderQuery matches criteria [is assignable to Object]
+2015-11-10 11:16:14.739 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.query' for aliases
+2015-11-10 11:16:14.739 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:16:14.739 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:16:14.740 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.740 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.740 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:16:14.741 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/Reason.class
+2015-11-10 11:16:14.742 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseBody.class
+2015-11-10 11:16:14.742 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseInfo.class
+2015-11-10 11:16:14.742 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResultEntity.class
+2015-11-10 11:16:14.743 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.Reason matches criteria [is assignable to Object]
+2015-11-10 11:16:14.743 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseBody matches criteria [is assignable to Object]
+2015-11-10 11:16:14.744 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseInfo matches criteria [is assignable to Object]
+2015-11-10 11:16:14.745 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResultEntity matches criteria [is assignable to Object]
+2015-11-10 11:16:14.745 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.share.result' for aliases
+2015-11-10 11:16:14.746 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:16:14.746 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:16:14.746 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.747 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:16:14.747 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:16:14.747 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ExpressInfoDto.class
+2015-11-10 11:16:14.748 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderItemDto.class
+2015-11-10 11:16:14.748 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnDto.class
+2015-11-10 11:16:14.748 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnApplyDto.class
+2015-11-10 11:16:14.749 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnProcessLogDto.class
+2015-11-10 11:16:14.750 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ExpressInfoDto matches criteria [is assignable to Object]
+2015-11-10 11:16:14.750 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderItemDto matches criteria [is assignable to Object]
+2015-11-10 11:16:14.751 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnDto matches criteria [is assignable to Object]
+2015-11-10 11:16:14.751 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnApplyDto matches criteria [is assignable to Object]
+2015-11-10 11:16:14.752 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnProcessLogDto matches criteria [is assignable to Object]
+2015-11-10 11:16:14.752 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.dto' for aliases
+2015-11-10 11:16:14.773 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:427] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2015-11-10 11:16:14.924 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfConfigurationMapper.xml]'
+2015-11-10 11:16:14.940 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfEbsOrderRefundMapper.xml]'
+2015-11-10 11:16:14.954 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfExceptionLogMapper.xml]'
+2015-11-10 11:16:14.974 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnDetailMapper.xml]'
+2015-11-10 11:16:15.018 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnHeaderMapper.xml]'
+2015-11-10 11:16:15.035 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessLogMapper.xml]'
+2015-11-10 11:16:15.050 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessRemarkMapper.xml]'
+2015-11-10 11:16:15.066 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnTypeMapper.xml]'
+2015-11-10 11:16:15.077 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/VeExpressMapper.xml]'
+2015-11-10 11:41:44.967 DEBUG  o.a.i.l.LogFactory [LogFactory.java:115] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2015-11-10 11:41:45.028 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VFS
+2015-11-10 11:41:45.028 DEBUG  o.a.i.i.ResolverUtil [JBoss6VFS.java:137] JBoss 6 VFS API is not available in this environment.
+2015-11-10 11:41:45.029 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VirtualFile
+2015-11-10 11:41:45.030 DEBUG  o.a.i.i.ResolverUtil [VFS.java:68] VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2015-11-10 11:41:45.030 DEBUG  o.a.i.i.ResolverUtil [VFS.java:80] Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2015-11-10 11:41:45.031 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:41:45.031 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:41:45.032 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.032 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.033 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:41:45.034 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfConfiguration.class
+2015-11-10 11:41:45.034 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfEbsOrderRefund.class
+2015-11-10 11:41:45.034 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfExceptionLog.class
+2015-11-10 11:41:45.035 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnDetail.class
+2015-11-10 11:41:45.035 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnHeader.class
+2015-11-10 11:41:45.035 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessLog.class
+2015-11-10 11:41:45.036 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessRemark.class
+2015-11-10 11:41:45.036 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnType.class
+2015-11-10 11:41:45.037 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/VeExpress.class
+2015-11-10 11:41:45.037 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfConfiguration matches criteria [is assignable to Object]
+2015-11-10 11:41:45.038 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfEbsOrderRefund matches criteria [is assignable to Object]
+2015-11-10 11:41:45.039 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfExceptionLog matches criteria [is assignable to Object]
+2015-11-10 11:41:45.039 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnDetail matches criteria [is assignable to Object]
+2015-11-10 11:41:45.040 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnHeader matches criteria [is assignable to Object]
+2015-11-10 11:41:45.041 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessLog matches criteria [is assignable to Object]
+2015-11-10 11:41:45.041 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessRemark matches criteria [is assignable to Object]
+2015-11-10 11:41:45.042 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnType matches criteria [is assignable to Object]
+2015-11-10 11:41:45.042 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.VeExpress matches criteria [is assignable to Object]
+2015-11-10 11:41:45.043 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.model' for aliases
+2015-11-10 11:41:45.044 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:41:45.044 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:41:45.044 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.045 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.045 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:41:45.046 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/query/OrderReturnHeaderQuery.class
+2015-11-10 11:41:45.047 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.query.OrderReturnHeaderQuery matches criteria [is assignable to Object]
+2015-11-10 11:41:45.048 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.query' for aliases
+2015-11-10 11:41:45.048 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:41:45.049 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:41:45.049 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.049 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.050 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:41:45.051 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/Reason.class
+2015-11-10 11:41:45.051 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseBody.class
+2015-11-10 11:41:45.051 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseInfo.class
+2015-11-10 11:41:45.052 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResultEntity.class
+2015-11-10 11:41:45.052 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.Reason matches criteria [is assignable to Object]
+2015-11-10 11:41:45.053 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseBody matches criteria [is assignable to Object]
+2015-11-10 11:41:45.053 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseInfo matches criteria [is assignable to Object]
+2015-11-10 11:41:45.054 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResultEntity matches criteria [is assignable to Object]
+2015-11-10 11:41:45.054 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.share.result' for aliases
+2015-11-10 11:41:45.055 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:41:45.055 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:41:45.055 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.056 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:41:45.056 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:41:45.057 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ExpressInfoDto.class
+2015-11-10 11:41:45.057 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderItemDto.class
+2015-11-10 11:41:45.057 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnDto.class
+2015-11-10 11:41:45.058 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnHeaderDetailDto.class
+2015-11-10 11:41:45.058 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnHeaderDto.class
+2015-11-10 11:41:45.059 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnProcessRemarkDto.class
+2015-11-10 11:41:45.059 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnApplyDto.class
+2015-11-10 11:41:45.059 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnProcessLogDto.class
+2015-11-10 11:41:45.060 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ExpressInfoDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.061 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderItemDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.061 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.062 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnHeaderDetailDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.062 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnHeaderDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.063 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnProcessRemarkDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.063 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnApplyDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.064 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnProcessLogDto matches criteria [is assignable to Object]
+2015-11-10 11:41:45.065 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.dto' for aliases
+2015-11-10 11:41:45.084 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:427] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2015-11-10 11:41:45.242 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfConfigurationMapper.xml]'
+2015-11-10 11:41:45.256 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfEbsOrderRefundMapper.xml]'
+2015-11-10 11:41:45.270 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfExceptionLogMapper.xml]'
+2015-11-10 11:41:45.292 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnDetailMapper.xml]'
+2015-11-10 11:41:45.344 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnHeaderMapper.xml]'
+2015-11-10 11:41:45.364 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessLogMapper.xml]'
+2015-11-10 11:41:45.380 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessRemarkMapper.xml]'
+2015-11-10 11:41:45.395 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnTypeMapper.xml]'
+2015-11-10 11:41:45.410 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/VeExpressMapper.xml]'
+2015-11-10 11:42:10.139 DEBUG  o.a.i.l.LogFactory [LogFactory.java:115] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2015-11-10 11:42:10.197 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VFS
+2015-11-10 11:42:10.197 DEBUG  o.a.i.i.ResolverUtil [JBoss6VFS.java:137] JBoss 6 VFS API is not available in this environment.
+2015-11-10 11:42:10.198 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VirtualFile
+2015-11-10 11:42:10.199 DEBUG  o.a.i.i.ResolverUtil [VFS.java:68] VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2015-11-10 11:42:10.199 DEBUG  o.a.i.i.ResolverUtil [VFS.java:80] Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2015-11-10 11:42:10.200 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:42:10.200 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:42:10.201 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.201 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.201 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 11:42:10.202 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfConfiguration.class
+2015-11-10 11:42:10.203 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfEbsOrderRefund.class
+2015-11-10 11:42:10.203 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfExceptionLog.class
+2015-11-10 11:42:10.203 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnDetail.class
+2015-11-10 11:42:10.204 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnHeader.class
+2015-11-10 11:42:10.204 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessLog.class
+2015-11-10 11:42:10.205 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessRemark.class
+2015-11-10 11:42:10.205 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnType.class
+2015-11-10 11:42:10.205 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/VeExpress.class
+2015-11-10 11:42:10.206 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfConfiguration matches criteria [is assignable to Object]
+2015-11-10 11:42:10.207 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfEbsOrderRefund matches criteria [is assignable to Object]
+2015-11-10 11:42:10.207 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfExceptionLog matches criteria [is assignable to Object]
+2015-11-10 11:42:10.208 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnDetail matches criteria [is assignable to Object]
+2015-11-10 11:42:10.209 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnHeader matches criteria [is assignable to Object]
+2015-11-10 11:42:10.209 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessLog matches criteria [is assignable to Object]
+2015-11-10 11:42:10.210 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessRemark matches criteria [is assignable to Object]
+2015-11-10 11:42:10.210 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnType matches criteria [is assignable to Object]
+2015-11-10 11:42:10.211 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.VeExpress matches criteria [is assignable to Object]
+2015-11-10 11:42:10.212 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.model' for aliases
+2015-11-10 11:42:10.212 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:42:10.213 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:42:10.213 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.213 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.214 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 11:42:10.215 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/query/OrderReturnHeaderQuery.class
+2015-11-10 11:42:10.215 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.query.OrderReturnHeaderQuery matches criteria [is assignable to Object]
+2015-11-10 11:42:10.216 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.query' for aliases
+2015-11-10 11:42:10.217 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:42:10.217 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:42:10.217 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.218 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.218 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 11:42:10.219 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/Reason.class
+2015-11-10 11:42:10.219 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseBody.class
+2015-11-10 11:42:10.220 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseInfo.class
+2015-11-10 11:42:10.220 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResultEntity.class
+2015-11-10 11:42:10.220 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.Reason matches criteria [is assignable to Object]
+2015-11-10 11:42:10.221 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseBody matches criteria [is assignable to Object]
+2015-11-10 11:42:10.221 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseInfo matches criteria [is assignable to Object]
+2015-11-10 11:42:10.222 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResultEntity matches criteria [is assignable to Object]
+2015-11-10 11:42:10.222 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.share.result' for aliases
+2015-11-10 11:42:10.223 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:42:10.223 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:42:10.224 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.224 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 11:42:10.224 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 11:42:10.225 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ExpressInfoDto.class
+2015-11-10 11:42:10.225 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderItemDto.class
+2015-11-10 11:42:10.225 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnDto.class
+2015-11-10 11:42:10.226 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnHeaderDetailDto.class
+2015-11-10 11:42:10.226 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnHeaderDto.class
+2015-11-10 11:42:10.226 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnProcessRemarkDto.class
+2015-11-10 11:42:10.227 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnApplyDto.class
+2015-11-10 11:42:10.227 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnProcessLogDto.class
+2015-11-10 11:42:10.228 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ExpressInfoDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.228 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderItemDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.229 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.229 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnHeaderDetailDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.230 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnHeaderDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.230 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnProcessRemarkDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.231 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnApplyDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.231 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnProcessLogDto matches criteria [is assignable to Object]
+2015-11-10 11:42:10.232 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.dto' for aliases
+2015-11-10 11:42:10.249 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:427] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2015-11-10 11:42:10.391 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfConfigurationMapper.xml]'
+2015-11-10 11:42:10.405 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfEbsOrderRefundMapper.xml]'
+2015-11-10 11:42:10.419 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfExceptionLogMapper.xml]'
+2015-11-10 11:42:10.440 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnDetailMapper.xml]'
+2015-11-10 11:42:10.485 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnHeaderMapper.xml]'
+2015-11-10 11:42:10.503 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessLogMapper.xml]'
+2015-11-10 11:42:10.520 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessRemarkMapper.xml]'
+2015-11-10 11:42:10.541 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnTypeMapper.xml]'
+2015-11-10 11:42:10.559 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/VeExpressMapper.xml]'
+2015-11-10 11:42:33.551 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:106] Creating a new SqlSession
+2015-11-10 11:42:33.558 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:122] Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d1c3f94]
+2015-11-10 11:42:33.576 DEBUG  o.m.s.t.SpringManagedTransaction [SpringManagedTransaction.java:85] JDBC Connection [jdbc:mysql://192.168.60.91:3306/zvecn?zeroDateTimeBehavior=convertToNull, UserName=zvecn@192.168.10.224, MySQL-AB JDBC Driver] will be managed by Spring
+2015-11-10 11:42:33.578 DEBUG  m.q.o.m.O.getAll [BaseJdbcLogger.java:132] ooo Using Connection [jdbc:mysql://192.168.60.91:3306/zvecn?zeroDateTimeBehavior=convertToNull, UserName=zvecn@192.168.10.224, MySQL-AB JDBC Driver]
+2015-11-10 11:42:33.581 DEBUG  m.q.o.m.O.getAll [BaseJdbcLogger.java:132] ==>  Preparing: select id , code, name, is_effect from ve_order_return_type t where t.is_effect = 1 
+2015-11-10 11:42:33.593 DEBUG  m.q.o.m.O.getAll [BaseJdbcLogger.java:132] ==> Parameters: 
+2015-11-10 11:42:33.605 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:165] Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d1c3f94]
+2015-11-10 11:42:33.608 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:277] Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d1c3f94]
+2015-11-10 11:42:33.608 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:298] Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d1c3f94]
+2015-11-10 12:02:02.246 DEBUG  o.a.i.l.LogFactory [LogFactory.java:115] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2015-11-10 12:02:02.306 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VFS
+2015-11-10 12:02:02.306 DEBUG  o.a.i.i.ResolverUtil [JBoss6VFS.java:137] JBoss 6 VFS API is not available in this environment.
+2015-11-10 12:02:02.307 DEBUG  o.a.i.i.ResolverUtil [VFS.java:101] Class not found: org.jboss.vfs.VirtualFile
+2015-11-10 12:02:02.308 DEBUG  o.a.i.i.ResolverUtil [VFS.java:68] VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2015-11-10 12:02:02.309 DEBUG  o.a.i.i.ResolverUtil [VFS.java:80] Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2015-11-10 12:02:02.309 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 12:02:02.310 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 12:02:02.310 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.310 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.311 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/model
+2015-11-10 12:02:02.312 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfConfiguration.class
+2015-11-10 12:02:02.312 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfEbsOrderRefund.class
+2015-11-10 12:02:02.312 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/InfExceptionLog.class
+2015-11-10 12:02:02.313 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnDetail.class
+2015-11-10 12:02:02.313 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnHeader.class
+2015-11-10 12:02:02.313 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessLog.class
+2015-11-10 12:02:02.314 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnProcessRemark.class
+2015-11-10 12:02:02.314 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/OrderReturnType.class
+2015-11-10 12:02:02.314 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/model/VeExpress.class
+2015-11-10 12:02:02.315 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfConfiguration matches criteria [is assignable to Object]
+2015-11-10 12:02:02.316 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfEbsOrderRefund matches criteria [is assignable to Object]
+2015-11-10 12:02:02.316 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.InfExceptionLog matches criteria [is assignable to Object]
+2015-11-10 12:02:02.317 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnDetail matches criteria [is assignable to Object]
+2015-11-10 12:02:02.318 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnHeader matches criteria [is assignable to Object]
+2015-11-10 12:02:02.318 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessLog matches criteria [is assignable to Object]
+2015-11-10 12:02:02.319 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnProcessRemark matches criteria [is assignable to Object]
+2015-11-10 12:02:02.320 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.OrderReturnType matches criteria [is assignable to Object]
+2015-11-10 12:02:02.320 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.model.VeExpress matches criteria [is assignable to Object]
+2015-11-10 12:02:02.321 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.model' for aliases
+2015-11-10 12:02:02.322 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 12:02:02.322 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 12:02:02.322 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.323 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.323 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/query
+2015-11-10 12:02:02.324 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/query/OrderReturnHeaderQuery.class
+2015-11-10 12:02:02.325 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.query.OrderReturnHeaderQuery matches criteria [is assignable to Object]
+2015-11-10 12:02:02.325 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.query' for aliases
+2015-11-10 12:02:02.326 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 12:02:02.326 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 12:02:02.326 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.327 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.327 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/share/result
+2015-11-10 12:02:02.328 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/Reason.class
+2015-11-10 12:02:02.329 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseBody.class
+2015-11-10 12:02:02.329 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResponseInfo.class
+2015-11-10 12:02:02.329 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/share/result/ResultEntity.class
+2015-11-10 12:02:02.330 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.Reason matches criteria [is assignable to Object]
+2015-11-10 12:02:02.330 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseBody matches criteria [is assignable to Object]
+2015-11-10 12:02:02.331 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResponseInfo matches criteria [is assignable to Object]
+2015-11-10 12:02:02.331 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.share.result.ResultEntity matches criteria [is assignable to Object]
+2015-11-10 12:02:02.332 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.share.result' for aliases
+2015-11-10 12:02:02.332 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:197] Find JAR URL: jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 12:02:02.333 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:203] Inner URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 12:02:02.333 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:214] Extracted JAR URL: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.333 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:291] Found JAR: file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar
+2015-11-10 12:02:02.334 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:64] Listing jar:file:/C:/Users/lenovo/.m2/repository/me/quxiu/orderReturn/orderReturn-api/0.0.1-SNAPSHOT/orderReturn-api-0.0.1-SNAPSHOT.jar!/me/quxiu/orderReturn/dto
+2015-11-10 12:02:02.334 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ExpressInfoDto.class
+2015-11-10 12:02:02.334 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderItemDto.class
+2015-11-10 12:02:02.335 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnDto.class
+2015-11-10 12:02:02.335 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnHeaderDetailDto.class
+2015-11-10 12:02:02.335 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnHeaderDto.class
+2015-11-10 12:02:02.336 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/OrderReturnProcessRemarkDto.class
+2015-11-10 12:02:02.336 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnApplyDto.class
+2015-11-10 12:02:02.336 DEBUG  o.a.i.i.ResolverUtil [DefaultVFS.java:178] Found resource: /me/quxiu/orderReturn/dto/ReturnProcessLogDto.class
+2015-11-10 12:02:02.337 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ExpressInfoDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.338 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderItemDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.338 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.339 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnHeaderDetailDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.339 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnHeaderDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.340 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.OrderReturnProcessRemarkDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.340 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnApplyDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.341 DEBUG  o.a.i.i.ResolverUtil [ResolverUtil.java:250] Checking to see if class me.quxiu.orderReturn.dto.ReturnProcessLogDto matches criteria [is assignable to Object]
+2015-11-10 12:02:02.341 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:379] Scanned package: 'me.quxiu.orderReturn.dto' for aliases
+2015-11-10 12:02:02.359 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:427] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2015-11-10 12:02:02.507 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfConfigurationMapper.xml]'
+2015-11-10 12:02:02.522 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfEbsOrderRefundMapper.xml]'
+2015-11-10 12:02:02.535 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/InfExceptionLogMapper.xml]'
+2015-11-10 12:02:02.555 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnDetailMapper.xml]'
+2015-11-10 12:02:02.599 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnHeaderMapper.xml]'
+2015-11-10 12:02:02.617 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessLogMapper.xml]'
+2015-11-10 12:02:02.633 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnProcessRemarkMapper.xml]'
+2015-11-10 12:02:02.653 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/OrderReturnTypeMapper.xml]'
+2015-11-10 12:02:02.674 DEBUG  o.m.s.SqlSessionFactoryBean [SqlSessionFactoryBean.java:468] Parsed mapper file: 'class path resource [mybatis/mapper/VeExpressMapper.xml]'
+2015-11-10 12:03:31.331 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:106] Creating a new SqlSession
+2015-11-10 12:03:31.347 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:122] Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@571a9ce0]
+2015-11-10 12:03:31.371 DEBUG  o.m.s.t.SpringManagedTransaction [SpringManagedTransaction.java:85] JDBC Connection [jdbc:mysql://192.168.60.91:3306/zvecn?zeroDateTimeBehavior=convertToNull, UserName=zvecn@192.168.10.224, MySQL-AB JDBC Driver] will be managed by Spring
+2015-11-10 12:03:31.373 DEBUG  m.q.o.m.O.getAll [BaseJdbcLogger.java:132] ooo Using Connection [jdbc:mysql://192.168.60.91:3306/zvecn?zeroDateTimeBehavior=convertToNull, UserName=zvecn@192.168.10.224, MySQL-AB JDBC Driver]
+2015-11-10 12:03:31.376 DEBUG  m.q.o.m.O.getAll [BaseJdbcLogger.java:132] ==>  Preparing: select id , code, name, is_effect from ve_order_return_type t where t.is_effect = 1 
+2015-11-10 12:03:31.390 DEBUG  m.q.o.m.O.getAll [BaseJdbcLogger.java:132] ==> Parameters: 
+2015-11-10 12:03:31.404 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:165] Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@571a9ce0]
+2015-11-10 12:03:31.407 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:277] Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@571a9ce0]
+2015-11-10 12:03:31.407 DEBUG  o.m.s.SqlSessionUtils [SqlSessionUtils.java:298] Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@571a9ce0]

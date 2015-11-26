@@ -1,0 +1,244 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<parent>
+    	<groupId>me.quxiu.orderReturn</groupId>
+    	<artifactId>orderReturn-parent</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+  	</parent>
+  	<artifactId>orderReturn-web</artifactId>
+  	<packaging>war</packaging>
+  	<name>orderReturn-web</name>
+  	<description>orderReturn-web</description>
+  
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<!-- 内部项目依赖 -->
+		<dependency>
+			<groupId>me.quxiu.orderReturn</groupId>
+			<artifactId>orderReturn-biz</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.ebaysf.web</groupId>
+		    <artifactId>cors-filter</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+		</dependency>
+
+		<!-- apache commons -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+	        <groupId>org.freemarker</groupId>
+	        <artifactId>freemarker</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.json</groupId>
+	        <artifactId>json</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>dom4j</groupId>
+	        <artifactId>dom4j</artifactId>
+	    </dependency>
+		
+		<!-- logback -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+		</dependency>
+
+		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<!-- servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!-- json -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!--fasterxml jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- excel util -->
+		<dependency>
+			<groupId>net.sf.jett</groupId>
+			<artifactId>jett-core</artifactId>
+			<version>0.6.0</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>orderReturn</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<showWarnings>true</showWarnings>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>sources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warSourceExcludes>doc/**, test/**</warSourceExcludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<port>81</port>
+					<path>/</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<finalName>${project.artifactId}</finalName>
+					<server>tomcat7</server>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.1.3.v20140225</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/</contextPath>
+					</webApp>
+					<webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
+					<httpConnector>
+						<port>8088</port>
+					</httpConnector>
+				</configuration>
+			</plugin>
+			<!-- <plugin>
+			    <groupId>org.eclipse.jetty</groupId>
+			    <artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<webApp>
+						<contextPath>/</contextPath>
+					</webApp>
+					<webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
+					<httpConnector>
+						<port>8088</port>
+					</httpConnector>
+				</configuration>			    
+			    <dependencies>
+			        <dependency>
+			            <groupId>org.ow2.asm</groupId>
+			            <artifactId>asm</artifactId>
+			            <version>5.0.2</version>
+			        </dependency>
+			        <dependency>
+			            <groupId>org.ow2.asm</groupId>
+			            <artifactId>asm-commons</artifactId>
+			            <version>5.0.2</version>
+			        </dependency>
+			    </dependencies>
+			</plugin> -->		
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>*.xml</include>
+					<include>*.properties</include>
+					<include>**/*.properties</include>
+					<include>**/*.xlsx</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+  
+</project>

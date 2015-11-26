@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.OrderReturnDetailMapper" >
+  <resultMap id="BaseResultMap" type="OrderReturnDetail" >
+    <id column="d_id" property="id" jdbcType="INTEGER" />
+    <result column="d_order_return_header_id" property="orderReturnHeaderId" jdbcType="INTEGER" />
+    <result column="d_return_reason" property="returnReason" jdbcType="TINYINT" />
+    <result column="d_sku_code" property="skuCode" jdbcType="VARCHAR" />
+    <result column="d_sku_name" property="skuName" jdbcType="VARCHAR" />
+    <result column="d_qty" property="qty" jdbcType="INTEGER" />
+    <result column="d_total_price" property="totalPrice" jdbcType="DOUBLE" />
+    <result column="d_unit_price" property="unitPrice" jdbcType="DOUBLE" />
+    <result column="d_sku_unit" property="skuUnit" jdbcType="VARCHAR" />
+    <result column="d_supplier_id" property="supplierId" jdbcType="INTEGER" />
+    <result column="d_po_no" property="poNo" jdbcType="VARCHAR" />
+    <result column="d_discount" property="discount" jdbcType="DECIMAL" />
+    <result column="d_memo" property="memo" jdbcType="VARCHAR" />
+    <result column="d_is_delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="d_create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="d_create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="d_update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="d_update_by" property="updateBy" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    r_d.id d_id, r_d.order_return_header_id d_order_return_header_id, r_d.return_reason d_return_reason,
+    r_d.sku_code d_sku_code, r_d.sku_name d_sku_name, r_d.qty d_qty, r_d.total_price d_total_price, r_d.unit_price d_unit_price, r_d.sku_unit d_sku_unit, 
+    r_d.supplier_id d_supplier_id, r_d.po_no d_po_no, r_d.discount d_discount, r_d.memo d_memo,
+    r_d.is_delete d_is_delete, r_d.create_time d_create_time, r_d.create_by d_create_by, r_d.update_time d_update_time, r_d.update_by d_update_by
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_return_detail r_d
+    where r_d.id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="getByOrderReturnHeaderId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	select 
+    <include refid="Base_Column_List" />
+    from order_return_detail r_d
+    where r_d.order_return_header_id = #{headerId,jdbcType=INTEGER}
+  </select>
+  
+    <select id="getDealIdBySkuCode" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select n.deal_id from ve_deal_newattr n where n.barcode = #{skuCode,jdbcType=VARCHAR}
+  </select>
+  
+  <resultMap id="OrderItemResultMap" type="me.quxiu.orderReturn.dto.OrderItemDto" >
+    <id column="sku_name" property="skuName" jdbcType="INTEGER" />
+    <result column="deal_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="sku_code" property="skuCode" jdbcType="INTEGER" />
+    <result column="img" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="unit_price" property="unitPrice" jdbcType="DOUBLE" />
+    <result column="qty" property="qty" jdbcType="INTEGER" />
+    <result column="returnAttribute" property="returnAttribute" jdbcType="INTEGER" />
+    <result column="return_reason" property="reasonCode" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <select id="getOrderReturnItemByOrderId" resultMap="OrderItemResultMap" parameterType="java.lang.Integer" >
+	<![CDATA[
+		SELECT t1.deal_id, d.sku_code, d.sku_name, d.qty, d.return_reason, d.unit_price, t1.img, 2 returnAttribute
+		FROM order_return_header h 
+		LEFT JOIN order_return_detail d ON d.order_return_header_id = h.id
+		LEFT JOIN ve_deal_newattr dn ON dn.barcode = d.sku_code
+		LEFT JOIN ( SELECT oi.deal_id, oi.attr, dg.img
+			    FROM ve_deal_order_item oi
+			    LEFT JOIN ve_deal_gallery dg ON dg.deal_id = oi.deal_id AND dg.ver = oi.ver
+			    WHERE oi.order_id = #{orderId,jdbcType=INTEGER} GROUP BY dg.deal_id) t1 ON t1.deal_id = dn.deal_id AND dn.material_code = t1.attr
+		WHERE h.order_id = #{orderId,jdbcType=INTEGER}		
+    ]]>
+  </select>  
+  
+  
+
+  <insert id="save" parameterType="OrderReturnDetail" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into order_return_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderReturnHeaderId != null" >
+        order_return_header_id,
+      </if>
+      <if test="returnReason != null" >
+        return_reason,
+      </if>      
+      <if test="skuCode != null" >
+        sku_code,
+      </if>
+      <if test="skuName != null" >
+        sku_name,
+      </if>
+      <if test="qty != null" >
+        qty,
+      </if>
+      <if test="totalPrice != null" >
+        total_price,
+      </if>
+      <if test="unitPrice != null" >
+        unit_price,
+      </if>
+      <if test="skuUnit != null" >
+        sku_unit,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="poNo != null" >
+        po_no,
+      </if>
+      <if test="discount != null" >
+        discount,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderReturnHeaderId != null" >
+        #{orderReturnHeaderId,jdbcType=INTEGER},
+      </if>
+      <if test="returnReason != null" >
+        #{returnReason,jdbcType=TINYINT},
+      </if>
+      <if test="skuCode != null" >
+        #{skuCode,jdbcType=VARCHAR},
+      </if>
+      <if test="skuName != null" >
+        #{skuName,jdbcType=VARCHAR},
+      </if>
+      <if test="qty != null" >
+        #{qty,jdbcType=INTEGER},
+      </if>
+      <if test="totalPrice != null" >
+        #{totalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="unitPrice != null" >
+        #{unitPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="skuUnit != null" >
+        #{skuUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="poNo != null" >
+        #{poNo,jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=INTEGER},
+      </if>
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="OrderReturnDetail" >
+    update order_return_detail
+    <set >
+      <if test="orderReturnHeaderId != null" >
+        order_return_header_id = #{orderReturnHeaderId,jdbcType=INTEGER},
+      </if>
+      <if test="returnReason != null" >
+        return_reason = #{returnReason,jdbcType=TINYINT},
+      </if>      
+      <if test="skuCode != null" >
+        sku_code = #{skuCode,jdbcType=VARCHAR},
+      </if>
+      <if test="skuName != null" >
+        sku_name = #{skuName,jdbcType=VARCHAR},
+      </if>
+      <if test="qty != null" >
+        qty = #{qty,jdbcType=INTEGER},
+      </if>
+      <if test="totalPrice != null" >
+        total_price = #{totalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="unitPrice != null" >
+        unit_price = #{unitPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="skuUnit != null" >
+        sku_unit = #{skuUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="poNo != null" >
+        po_no = #{poNo,jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="findServiceByGoodsId" parameterType="java.lang.Integer" resultType="java.lang.String" >
+  		select c.service from ve_deal d left join ve_deal_cate c on d.cate_id = c.id where d.id=#{goodsId}
+  </select>
+
+</mapper>

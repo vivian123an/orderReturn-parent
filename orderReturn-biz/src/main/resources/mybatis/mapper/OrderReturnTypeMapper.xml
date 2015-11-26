@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.OrderReturnTypeMapper" >
+  <resultMap id="BaseResultMap" type="OrderReturnType" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="is_effect" property="isEffect" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id , code, name, is_effect
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ve_order_return_type
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <resultMap id="OrderItemResultMap" type="me.quxiu.orderReturn.dto.OrderItemDto" >
+    <id column="name" property="skuName" jdbcType="INTEGER" />
+    <result column="deal_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="barcode" property="skuCode" jdbcType="INTEGER" />
+    <result column="img" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="unit_price" property="unitPrice" jdbcType="DOUBLE" />
+    <result column="number" property="qty" jdbcType="INTEGER" />
+    <result column="returnAttribute" property="returnAttribute" jdbcType="INTEGER" />
+  </resultMap>
+  
+   <select id="getUserNameById" resultType="java.lang.String" parameterType="java.lang.Integer" >
+    select us.user_name from ve_user us where us.id = #{userId,jdbcType=INTEGER}
+  </select>
+    
+   <select id="getUserNameById" resultType="java.lang.String" parameterType="java.lang.Integer" >
+    select a.adm_realname from ve_admin a where a.id = #{adminId,jdbcType=INTEGER}
+  </select>  
+  
+  <select id="getOrderItemByOrderId" resultMap="OrderItemResultMap" parameterType="java.lang.Integer" >
+	<![CDATA[	
+		SELECT t1.deal_id, t1.name, t1.number, dn.barcode, t1.img, t1.unit_price, CASE WHEN dc.service LIKE '%4%' THEN 1 ELSE 3 END returnAttribute
+		FROM (SELECT oi.deal_id, oi.attr, dg.img, oi.name, oi.number, oi.unit_price 
+		FROM ve_deal_order_item oi
+		LEFT JOIN ve_deal_gallery dg ON dg.deal_id = oi.deal_id AND dg.ver = oi.ver
+		WHERE oi.order_id = #{orderId,jdbcType=INTEGER}  GROUP BY dg.deal_id) t1
+		LEFT JOIN ve_deal_newattr dn ON dn.material_code = t1.attr AND dn.deal_id = t1.deal_id
+		LEFT JOIN ve_deal d ON t1.deal_id = d.id
+		LEFT JOIN ve_deal_cate dc ON dc.id = d.cate_id	order by returnAttribute 	
+    ]]>
+  </select>
+  
+  <select id="getPoNumberByOrderIdAndSkuCode" resultType="java.lang.String" parameterType="map" >
+	<![CDATA[	
+		SELECT oi.po FROM ve_deal_order_item oi 
+		INNER JOIN ve_deal_newattr dn ON oi.deal_id = dn.deal_id AND dn.material_code = oi.attr
+		where oi.order_id= #{orderId,jdbcType=INTEGER} AND dn.barcode = #{skuCode,jdbcType=VARCHAR} limit 0,1		
+    ]]>
+  </select>
+  
+  <select id="getSupplierIdAndDiscount" resultType="hashmap" parameterType="map" >
+	<![CDATA[
+		SELECT m.supplier_id, m.discount
+		FROM ve_deal_order_item oi 
+		INNER JOIN ve_deal_newattr dn ON oi.deal_id = dn.deal_id AND dn.material_code = oi.attr 
+		INNER JOIN ve_po p ON p.po_no = oi.po
+		INNER JOIN ve_online_master m ON m.id = p.online_id
+		WHERE oi.order_id = #{orderId,jdbcType=INTEGER} AND dn.barcode = #{skuCode,jdbcType=VARCHAR} limit 0,1	
+    ]]>
+  </select>
+  
+  <select id="getImageUrlBySkuCode" resultType="java.lang.String" parameterType="map" >
+	<![CDATA[
+		SELECT dg.img
+		FROM ve_deal_order_item oi
+		INNER JOIN ve_deal_gallery dg ON dg.deal_id = oi.deal_id AND dg.ver = oi.ver
+		INNER JOIN ve_deal_newattr dn ON oi.deal_id = dn.deal_id AND dn.material_code = oi.attr 
+		WHERE oi.order_id = #{orderId,jdbcType=INTEGER} AND dn.barcode = #{skuCode,jdbcType=VARCHAR} LIMIT 0,1
+    ]]>
+  </select>
+  
+  
+  <select id="getGoodsIdBySkuCode" resultType="java.lang.Integer" parameterType="java.lang.String">
+  	select deal_id from ve_deal_newattr where material_code =  #{skuCode}
+  </select>
+  
+  <select id="getAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ve_order_return_type t
+    where t.is_effect = 1
+  </select>
+
+  <insert id="save" parameterType="OrderReturnType" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into ve_order_return_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="isEffect != null" >
+        is_effect,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        #{code,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isEffect != null" >
+        #{isEffect,jdbcType=BIT},
+      </if>
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="OrderReturnType" >
+    update ve_order_return_type
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isEffect != null" >
+        is_effect = #{isEffect,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+ <update id="updateDealOrderAllReturned" parameterType="_int" >
+    update ve_deal_order
+    <set >
+		after_sale = 5
+    </set>
+    where id = #{orderId,jdbcType=INTEGER}
+  </update>
+
+</mapper>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.OrderReturnProcessRemarkMapper" >
+  <resultMap id="BaseResultMap" type="OrderReturnProcessRemark" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="return_no" property="returnNo" jdbcType="VARCHAR" />
+    <result column="remark_msg" property="remarkMsg" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, return_no, remark_msg, create_time, create_by, update_time, update_by, is_delete
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_return_process_remark
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  
+    <select id="getRemarksByReturnNo" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+     r.id,  r.return_no,  r.remark_msg,  r.create_time,  u.user_name create_by
+    from order_return_process_remark r left join ve_user u on r.create_by=u.id 
+    where r.return_no = #{reutrnNo,jdbcType=VARCHAR} order by r.create_time desc
+  </select>
+
+  <insert id="save" parameterType="OrderReturnProcessRemark" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into order_return_process_remark
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="returnNo != null" >
+        return_no,
+      </if>
+      <if test="remarkMsg != null" >
+        remark_msg,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="returnNo != null" >
+        #{returnNo,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkMsg != null" >
+        #{remarkMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="OrderReturnProcessRemark" >
+    update order_return_process_remark
+    <set >
+      <if test="returnNo != null" >
+        return_no = #{returnNo,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkMsg != null" >
+        remark_msg = #{remarkMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.InfExceptionLogMapper" >
+  <resultMap id="BaseResultMap" type="InfExceptionLog" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ex_msg" property="exMsg" jdbcType="VARCHAR" />
+    <result column="ex_id" property="exId" jdbcType="VARCHAR" />
+    <result column="ex_description" property="exDescription" jdbcType="VARCHAR" />
+    <result column="inf_code" property="infCode" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    log.id id, log.ex_msg, log.ex_id, log.ex_table, log.inf_code, log.create_time, log.create_by
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from inf_exception_log log
+    where log.id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <insert id="save" parameterType="InfExceptionLog" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into inf_exception_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="exMsg != null" >
+        ex_msg,
+      </if>
+      <if test="exId != null" >
+        ex_id,
+      </if>
+      <if test="exDescription != null" >
+        ex_description,
+      </if>
+      <if test="infCode != null" >
+        inf_code,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="exMsg != null" >
+        #{exMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="exId != null" >
+        #{exId,jdbcType=VARCHAR},
+      </if>
+      <if test="exDescription != null" >
+        #{exDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="infCode != null" >
+        #{infCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="InfExceptionLog" >
+    update inf_exception_log
+    <set >
+      <if test="exMsg != null" >
+        ex_msg = #{exMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="exId != null" >
+        ex_id = #{exId,jdbcType=VARCHAR},
+      </if>
+      <if test="exDescription != null" >
+        ex_description = #{exDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="infCode != null" >
+        inf_code = #{infCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

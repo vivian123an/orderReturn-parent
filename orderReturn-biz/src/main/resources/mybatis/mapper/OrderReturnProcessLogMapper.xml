@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.OrderReturnProcessLogMapper" >
+  <resultMap id="BaseResultMap" type="OrderReturnProcessLog" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="return_no" property="returnNo" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="status_bms" property="statusBms" jdbcType="VARCHAR" />
+    <result column="status_msg" property="statusMsg" jdbcType="VARCHAR" />
+    <result column="process_user" property="processUser" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id , return_no, status, status_bms, status_msg, process_user, create_time, create_by, 
+    update_time, update_by
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_return_process_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="getLogsByReturnNo" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_return_process_log l
+    where l.return_no = #{reutrnNo,jdbcType=VARCHAR}
+    order by l.create_time desc
+  </select>
+  
+  
+  <select id="getLogsByReturnNoForGetProcessUser" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+      l.return_no, l.status_msg, l.create_time, u.user_name  create_by
+    from order_return_process_log l left join ve_user u on l.create_by=u.id
+    where l.return_no = #{reutrnNo,jdbcType=VARCHAR}
+    order by l.create_time desc
+  </select>
+  
+
+  <insert id="save" parameterType="OrderReturnProcessLog" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into order_return_process_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="returnNo != null" >
+        return_no,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="statusBms != null" >
+        status_bms,
+      </if>
+      <if test="statusMsg != null" >
+        status_msg,
+      </if>
+      <if test="processUser != null" >
+        process_user,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="returnNo != null" >
+        #{returnNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="statusBms != null" >
+        #{statusBms,jdbcType=VARCHAR},
+      </if>
+      <if test="statusMsg != null" >
+        #{statusMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="processUser != null" >
+        #{processUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="OrderReturnProcessLog">
+    update order_return_process_log
+    <set >
+      <if test="returnNo != null" >
+        return_no = #{returnNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="statusBms != null" >
+        status_bms = #{statusBms,jdbcType=VARCHAR},
+      </if>
+      <if test="statusMsg != null" >
+        status_msg = #{statusMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="processUser != null" >
+        process_user = #{processUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

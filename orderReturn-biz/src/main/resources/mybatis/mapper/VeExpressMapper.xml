@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.VeExpressMapper" >
+  <resultMap id="BaseResultMap" type="VeExpress" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="class_name" property="className" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="is_effect" property="isEffect" jdbcType="BIT" />
+    <result column="name_letter" property="nameLetter" jdbcType="CHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="VeExpress" extends="BaseResultMap" >
+    <result column="print_tmpl" property="printTmpl" jdbcType="LONGVARCHAR" />
+    <result column="config" property="config" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    e.id id, e.class_name, name, e.is_effect, e.name_letter
+  </sql>
+  <sql id="Blob_Column_List" >
+    e.print_tmpl, e.config
+  </sql>
+  <select id="get" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ve_express e
+    where e.id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="getSimpleExpressAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ve_express e
+    where e.is_effect = 1
+  </select>
+
+  <insert id="save" parameterType="VeExpress" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into ve_express
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="className != null" >
+        class_name,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="isEffect != null" >
+        is_effect,
+      </if>
+      <if test="nameLetter != null" >
+        name_letter,
+      </if>
+      <if test="printTmpl != null" >
+        print_tmpl,
+      </if>
+      <if test="config != null" >
+        config,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="className != null" >
+        #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isEffect != null" >
+        #{isEffect,jdbcType=BIT},
+      </if>
+      <if test="nameLetter != null" >
+        #{nameLetter,jdbcType=CHAR},
+      </if>
+      <if test="printTmpl != null" >
+        #{printTmpl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="config != null" >
+        #{config,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="VeExpress" >
+    update ve_express
+    <set >
+      <if test="className != null" >
+        class_name = #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isEffect != null" >
+        is_effect = #{isEffect,jdbcType=BIT},
+      </if>
+      <if test="nameLetter != null" >
+        name_letter = #{nameLetter,jdbcType=CHAR},
+      </if>
+      <if test="printTmpl != null" >
+        print_tmpl = #{printTmpl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="config != null" >
+        config = #{config,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+</mapper>

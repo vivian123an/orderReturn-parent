@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.quxiu.orderReturn.mapper.OrderReturnExpressCouponMapper" >
+  <resultMap id="BaseResultMap" type="OrderReturnExpressCoupon" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="order_sn" property="orderSn" jdbcType="VARCHAR" />
+    <result column="return_no" property="returnNo" jdbcType="VARCHAR" />
+    <result column="supplier_id" property="supplierId" jdbcType="INTEGER" />
+    <result column="is_makeup" property="isMakeup" jdbcType="BIT" />
+    <result column="makeup_money" property="makeupMoney" jdbcType="REAL" />
+    <result column="is_send_coupon" property="isSendCoupon" jdbcType="BIT" />
+    <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="INTEGER" />    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id , order_id, order_sn, return_no, supplier_id, is_makeup, makeup_money, is_send_coupon, 
+    is_delete, create_time, create_by, update_time, update_by
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_return_express_coupon
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <insert id="save" parameterType="OrderReturnExpressCoupon" useGeneratedKeys="true" keyProperty="id"  keyColumn="id">
+    insert into order_return_express_coupon
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="orderSn != null" >
+        order_sn,
+      </if>
+      <if test="returnNo != null" >
+        return_no,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="isMakeup != null" >
+        is_makeup,
+      </if>
+      <if test="makeupMoney != null" >
+        makeup_money,
+      </if>
+      <if test="isSendCoupon != null" >
+        is_send_coupon,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>      
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null" >
+        #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="returnNo != null" >
+        #{returnNo,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="isMakeup != null" >
+        #{isMakeup,jdbcType=BIT},
+      </if>
+      <if test="makeupMoney != null" >
+        #{makeupMoney,jdbcType=REAL},
+      </if>
+      <if test="isSendCoupon != null" >
+        #{isSendCoupon,jdbcType=BIT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>      
+    </trim>
+	<selectKey keyProperty="id" resultType="int" order="AFTER">  
+       SELECT LAST_INSERT_ID();  
+    </selectKey>    
+  </insert>
+  
+  <update id="update" parameterType="OrderReturnExpressCoupon" >
+    update order_return_express_coupon
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null" >
+        order_sn = #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="returnNo != null" >
+        return_no = #{returnNo,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="isMakeup != null" >
+        is_makeup = #{isMakeup,jdbcType=BIT},
+      </if>
+      <if test="makeupMoney != null" >
+        makeup_money = #{makeupMoney,jdbcType=REAL},
+      </if>
+      <if test="isSendCoupon != null" >
+        is_send_coupon = #{isSendCoupon,jdbcType=BIT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>      
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>      
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>
